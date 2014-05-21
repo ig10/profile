@@ -1,8 +1,8 @@
 root = "/var/www/profile/current"
 working_directory root
-pid "#{root}/tmp/pids/unicorn.pid"
-stderr_path "#{root}/log/unicorn.log"
-stdout_path "#{root}/log/unicorn.log"
+pid "/home/unicorn/pids/unicorn.pid"
+stderr_path "/home/unicorn/log/unicorn.log"
+stdout_path "/home/unicorn/log/unicorn.log"
 
 listen "/tmp/unicorn.profile.sock"
 worker_processes 2
