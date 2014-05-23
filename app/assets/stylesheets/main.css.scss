@@ -1,0 +1,87 @@
+@import 'compass';
+@include font-face("HelveticaNM", font-files("HelveticaNeue-Medium.otf"));
+
+*{
+  font-family: 'HelveticaNM';
+}
+
+body{
+  text-align: center;
+  margin: 0;
+  height: 100%;
+  background: url(bg.jpg);
+  background-attachment: fixed;
+  background-color: transparent;
+  background-size: cover;
+  background-position-y: 70%;
+  background-repeat: no-repeat;
+}
+
+.info{
+  top: 10%;
+  left: 10%;
+  width: 30%;
+  height: 65%;
+  position: absolute;
+  text-align: center;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  @include border-radius(40px 0 40px 0);
+  .container{
+    .name{
+      padding: 15px 0 15px 0;
+      color: rgb(255, 255, 255);
+      font-size: 35px;
+      font-variant: small-caps;
+      text-rendering: optimizeLegibility;
+      text-shadow: rgb(0, 0, 0) 3px 2px;
+    }
+    .profile-picture{
+      img{
+        @include border-radius(90px);
+      }
+    }
+    .content{
+      text-align: center;
+      padding: 10px 65px 10px 65px;
+      line-height: 30px;
+      font-size: 17px;
+      color: #CCC;
+      text-shadow: black 2px 2px;
+      a{
+        color: rgb(132, 190, 214);
+        text-decoration: none;
+      }
+      .note{
+        font-size: 15px;
+        font-style: italic;
+        color: #61805D;
+      }
+    }
+    .social{
+      padding: 7px 0;
+      span{
+        margin: 0 5px 0 5px;
+        height: 48px;
+        width: 48px;
+        display: inline-block;
+        &.facebook{
+          background: url(social/facebook.png);
+        }
+        &.twitter{
+          background: url(social/twitter.png);
+        }
+        &.linkedin{
+          background: url(social/linkedin.png);
+        }
+      }
+    }
+    .separator{
+      border-top: 1px #CCC dashed;
+      margin: 15px 5px 15px 5px;
+    }
+  }
+}
+
+
+
