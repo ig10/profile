@@ -34,10 +34,10 @@ role :db,  %w{ig10.org}
 # And/or per server (overrides global)
 # ------------------------------------
 server 'ig10.org',
-  user: 'i10',
+  user: 'ig10',
   roles: %w{web app},
   ssh_options: {
-    user: 'i10', # overrides user setting above
+    user: 'ig10', # overrides user setting above
     #keys: %w(/home/user_name/.ssh/id_rsa),
     forward_agent: false,
     auth_methods: %w(publickey password),
