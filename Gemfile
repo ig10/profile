@@ -29,7 +29,7 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # To use debugger
 # gem 'debugger'
