@@ -48,6 +48,8 @@ body{
       font-size: 17px;
       color: #CCC;
       text-shadow: black 2px 2px;
+      border-top: 1px #CCC dashed;
+      border-bottom: 1px #CCC dashed;
       a{
         color: rgb(132, 190, 214);
         text-decoration: none;
@@ -55,8 +57,9 @@ body{
       .note{
         font-size: 15px;
         font-style: italic;
-        color: #61805D;
+        color: #EBEDEB;
       }
+
     }
     .social{
       padding: 7px 0;
