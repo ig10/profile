@@ -7,7 +7,8 @@ class HomeController < ActionController::Base
     @social = {
       'facebook' => 'https://www.facebook.com/ignacio10',
       'twitter' => 'https://twitter.com/igdiez',
-      'linkedin' => 'https://cl.linkedin.com/pub/ignacio-diez-albornoz/45/589/b1a'
+      'linkedin' => 'https://cl.linkedin.com/pub/ignacio-diez-albornoz/45/589/b1a',
+      'github' => 'https://github.com/ig10'
      }
   end
 

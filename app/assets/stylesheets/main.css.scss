@@ -94,6 +94,14 @@ body{
             color: #069;
           }
         }
+        &.github{
+          &::before{
+            content: "\f233";
+          }
+          &:hover{
+            color: #4183c4;
+          }
+        }
         @include transition-property(color);
         @include transition-duration(1.2s);
       }
