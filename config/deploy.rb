@@ -25,11 +25,12 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute :touch, release_path.join('tmp/restart.txt')
+      execute "cd #{release_path} && touch ./tmp/restart.txt"
     end
   end
 
-  before :bundle, :precompile
+  before :publishing, :bundle
+  before :publishing, :precompile
   after :publishing, :restart
 
   after :restart, :clear_cache do
