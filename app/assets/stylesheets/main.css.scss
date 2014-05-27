@@ -1,11 +1,9 @@
 @import 'compass';
 @include font-face("HelveticaNM", font-files("HelveticaNeue-Medium.otf"));
-
-*{
-  font-family: 'HelveticaNM';
-}
+@include font-face("ionicons", font-files("ioicons/ionicons.ttf", "ioicons/ionicons.eot", "ioicons/ionicons.woff", "ioicons/ionicons.svg"), '400', 'normal');
 
 body{
+  font-family: 'HelveticaNM';
   text-align: center;
   margin: 0;
   height: 100%;
@@ -50,6 +48,7 @@ body{
       text-shadow: black 2px 2px;
       border-top: 1px #CCC dashed;
       border-bottom: 1px #CCC dashed;
+      margin: 10px 0 10px 0;
       a{
         color: rgb(132, 190, 214);
         text-decoration: none;
@@ -62,21 +61,41 @@ body{
 
     }
     .social{
+      font-family: ionicons;
       padding: 7px 0;
-      span{
-        margin: 0 5px 0 5px;
-        height: 48px;
-        width: 48px;
+      a{
+        width: 80px;
+        color: #CCC;
+        font-size: 40px;
+        font-weight: 400;
         display: inline-block;
+        text-decoration: none;
         &.facebook{
-          background: url(social/facebook.png);
+          &::before{
+            content: "\f230";
+          }
+          &:hover{
+            color: #4c66a4;
+          }
         }
         &.twitter{
-          background: url(social/twitter.png);
+          &::before{
+            content: "\f242";
+          }
+          &:hover{
+            color: #55acee;
+          }
         }
         &.linkedin{
-          background: url(social/linkedin.png);
+          &::before{
+            content: "\f238";
+          }
+          &:hover{
+            color: #069;
+          }
         }
+        @include transition-property(color);
+        @include transition-duration(1.2s);
       }
     }
     .separator{
