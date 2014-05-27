@@ -1,4 +1,4 @@
-@import 'compass';
+@import 'mixins';
 @include font-face("HelveticaNM", font-files("HelveticaNeue-Medium.otf"));
 @include font-face("ionicons", font-files("ioicons/ionicons.ttf", "ioicons/ionicons.eot", "ioicons/ionicons.woff", "ioicons/ionicons.svg"), '400', 'normal');
 
@@ -70,38 +70,10 @@ body{
         font-weight: 400;
         display: inline-block;
         text-decoration: none;
-        &.facebook{
-          &::before{
-            content: "\f230";
-          }
-          &:hover{
-            color: #4c66a4;
-          }
-        }
-        &.twitter{
-          &::before{
-            content: "\f242";
-          }
-          &:hover{
-            color: #55acee;
-          }
-        }
-        &.linkedin{
-          &::before{
-            content: "\f238";
-          }
-          &:hover{
-            color: #069;
-          }
-        }
-        &.github{
-          &::before{
-            content: "\f233";
-          }
-          &:hover{
-            color: #4183c4;
-          }
-        }
+        @include network('facebook', "\f230", #4c66a4);
+        @include network('twitter', "\f242", #55acee);
+        @include network('linkedin', "\f238", #069);
+        @include network('github', "\f233", #4183c4);
         @include transition-property(color);
         @include transition-duration(1.2s);
       }

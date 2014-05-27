@@ -1,0 +1,13 @@
+@import 'compass';
+
+@mixin network($name, $content, $color){
+  // This will be the children of <a> element
+  &.#{$name}{
+    &::before{
+      content: $content;
+    }
+    &:hover{
+      color:  $color;
+    }
+  }
+}
