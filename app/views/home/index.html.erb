@@ -1,29 +1,34 @@
-<div class="info">
-  <div class="container">
-
-    <div class="name">
-      <%= @name.downcase %>
+<main>
+  <header>
+    <div>
+      <p>
+        <%= @name.downcase %>
+      </p>
+      <figure>
+        <img src="/assets/i10.png" alt="i10">
+      </figure>
     </div>
+  </header>
 
-    <div class="profile-picture">
-      <img src="/assets/i10.png" alt="i10">
+  <section>
+    <div id="content">
+      <p>Hey!, I'm a Front-Back End Web Developer. I live in Santiago, Chile and i'm working at</p>
+      <p><%= link_to('ComparaOnline.com', 'http://www.comparaonline.com')  %>.</p>
+      <p>By now, i'm developing in Ruby On Rails and it ROCKS!.</p>
+      <p class="note">
+        This site is under construction, if you want to contact me click in a network below and send me a message.
+      </p>
     </div>
+  </section>
 
-    <div class="content">
-      Hey!, I'm a Front-Back End Web Developer. I live in Santiago, Chile and i'm working at
-      <br>
-      <%= link_to('ComparaOnline.com', 'http://www.comparaonline.com')  %>.
-      <br>
-      By now, i'm developing in Ruby On Rails and it ROCKS!.
-      <br><br>
-      <span class="note">This site is under construction, if you want to contact me click in a network below and send me a message.</span>
-    </div>
-
-    <div class="social">
+  <footer>
+    <div id='social'>
       <% @social.each do |network, url| %>
         <%= link_to('', url, {target: '_blank', title: network.titleize, class: network }) %>
       <% end %>
-    </div>
 
-  </div>
-</div>
+      <%= mail_me %>
+    </div>
+  </footer>
+
+</main>
