@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'keyframes';
 @include font-face("HelveticaNM", font-files("HelveticaNeue-Medium.otf"));
 @include font-face("ionicons", font-files("ioicons/ionicons.ttf", "ioicons/ionicons.eot", "ioicons/ionicons.woff", "ioicons/ionicons.svg"), '400', 'normal');
 
@@ -13,42 +14,47 @@ body{
   background-size: cover;
   background-position-y: 70%;
   background-repeat: no-repeat;
+  overflow: auto;
 }
 
-.info{
-  top: 10%;
-  left: 10%;
-  width: 30%;
-  height: 65%;
+main{
+  width: 40%;
+  height: 100%;
   position: absolute;
   text-align: center;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  @include border-radius(40px 0 40px 0);
-  .container{
-    .name{
-      padding: 15px 0 15px 0;
-      color: rgb(255, 255, 255);
-      font-size: 35px;
-      font-variant: small-caps;
-      text-rendering: optimizeLegibility;
-      text-shadow: rgb(0, 0, 0) 3px 2px;
+  background-color: rgba(0, 0, 0, 0.35);
+  left: 0;
+  header{
+    height: 30%;
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    font-variant: small-caps;
+    text-rendering: optimizeLegibility;
+    text-shadow: rgb(0, 0, 0) 3px 2px;
+    div{
+      @include vertical-align;
     }
-    .profile-picture{
-      img{
-        @include border-radius(90px);
-      }
+  }
+  figure{
+    img{
+      @include border-radius(90px);
     }
-    .content{
-      text-align: center;
+  }
+  section{
+    height: 50%;
+    border-top: 1px #CCC dashed;
+    border-bottom: 1px #CCC dashed;
+    #content{
       padding: 10px 65px 10px 65px;
       line-height: 30px;
+      text-align: center;
       font-size: 17px;
       color: #CCC;
       text-shadow: black 2px 2px;
-      border-top: 1px #CCC dashed;
-      border-bottom: 1px #CCC dashed;
       margin: 10px 0 10px 0;
+      white-space: normal;
+      vertical-align: middle;
+      @include vertical-align;
       a{
         color: rgb(132, 190, 214);
         text-decoration: none;
@@ -58,11 +64,14 @@ body{
         font-style: italic;
         color: #EBEDEB;
       }
-
     }
-    .social{
-      font-family: ionicons;
-      padding: 7px 0;
+
+  }
+  footer{
+    height: 15%;
+    font-family: ionicons;
+    #social{
+      @include vertical-align;
       a{
         width: 80px;
         color: #CCC;
@@ -74,16 +83,23 @@ body{
         @include network('twitter', "\f242", #55acee);
         @include network('linkedin', "\f238", #069);
         @include network('github', "\f233", #4183c4);
+        @include network('mail', "\f186", #6D803C);
         @include transition-property(color);
         @include transition-duration(1.2s);
       }
-    }
-    .separator{
-      border-top: 1px #CCC dashed;
-      margin: 15px 5px 15px 5px;
+
     }
   }
 }
 
+@media screen and (max-width: 1090px) {
+  main{
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  // NO BG COVER
+}
 
 
