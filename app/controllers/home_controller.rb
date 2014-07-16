@@ -10,6 +10,7 @@ class HomeController < ActionController::Base
       'linkedin' => 'https://cl.linkedin.com/pub/ignacio-diez-albornoz/45/589/b1a',
       'github' => 'https://github.com/ig10'
      }
+     @mail = 'ig.diez10@gmail.com'
   end
 
 end

@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'keyframes';
 @include font-face("HelveticaNM", font-files("HelveticaNeue-Medium.otf"));
 @include font-face("ionicons", font-files("ioicons/ionicons.ttf", "ioicons/ionicons.eot", "ioicons/ionicons.woff", "ioicons/ionicons.svg"), '400', 'normal');
 
@@ -13,42 +14,50 @@ body{
   background-size: cover;
   background-position-y: 70%;
   background-repeat: no-repeat;
+  overflow: auto;
 }
 
-.info{
+main{
+  position: absolute;
   top: 10%;
   left: 10%;
   width: 30%;
-  height: 65%;
-  position: absolute;
+  height: 75%;
+  @include border-radius(30px 0 30px 0);
   text-align: center;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  @include border-radius(40px 0 40px 0);
-  .container{
-    .name{
-      padding: 15px 0 15px 0;
-      color: rgb(255, 255, 255);
-      font-size: 35px;
-      font-variant: small-caps;
-      text-rendering: optimizeLegibility;
-      text-shadow: rgb(0, 0, 0) 3px 2px;
+  background-color: rgba(0, 0, 0, 0.35);
+  header{
+    height: 35%;
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    font-variant: small-caps;
+    text-rendering: optimizeLegibility;
+    text-shadow: rgb(0, 0, 0) 3px 2px;
+    div{
+      @include vertical-align;
+      top: 45%;
     }
-    .profile-picture{
-      img{
-        @include border-radius(90px);
-      }
+  }
+  figure{
+    img{
+      @include border-radius(90px);
     }
-    .content{
-      text-align: center;
+  }
+  section{
+    height: 45%;
+    border-top: 1px #CCC dashed;
+    border-bottom: 1px #CCC dashed;
+    #content{
       padding: 10px 65px 10px 65px;
       line-height: 30px;
+      text-align: center;
       font-size: 17px;
       color: #CCC;
       text-shadow: black 2px 2px;
-      border-top: 1px #CCC dashed;
-      border-bottom: 1px #CCC dashed;
       margin: 10px 0 10px 0;
+      white-space: normal;
+      vertical-align: middle;
+      @include vertical-align;
       a{
         color: rgb(132, 190, 214);
         text-decoration: none;
@@ -58,11 +67,14 @@ body{
         font-style: italic;
         color: #EBEDEB;
       }
-
     }
-    .social{
-      font-family: ionicons;
-      padding: 7px 0;
+
+  }
+  footer{
+    height: 15%;
+    font-family: ionicons;
+    #social{
+      @include vertical-align;
       a{
         width: 80px;
         color: #CCC;
@@ -74,16 +86,153 @@ body{
         @include network('twitter', "\f242", #55acee);
         @include network('linkedin', "\f238", #069);
         @include network('github', "\f233", #4183c4);
+        @include network('mail', "\f186", #6D803C);
         @include transition-property(color);
         @include transition-duration(1.2s);
       }
-    }
-    .separator{
-      border-top: 1px #CCC dashed;
-      margin: 15px 5px 15px 5px;
+
     }
   }
 }
 
+
+
+// RESPONSIVE
+
+// Controlling Heights
+
+@media screen and (max-height: 790px){
+  main{
+    header{
+      div{
+        p{
+          margin-bottom: -30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 690px){
+  main{
+    header{
+      figure{
+        img{
+          height: 150px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 580px){
+  main{
+    header{
+      div{
+        padding: 0 120px;
+        height: 100%;
+        top: 50%;
+        p{
+          float: right;
+          margin-top: 65px;
+        }
+        figure{
+          float: left;
+          margin: 10px 10px 0 60px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1590px), screen and (max-height: 866px) {
+  main{
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    @include border-radius(0);
+    header{
+      height: 30%;
+    }
+    section{
+      height: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 912px) {
+  // NO BG COVER
+  main{
+    header{
+      height: 26%;
+      div{
+        top: 45%;
+        figure{
+          img{
+            height: 150px;
+          }
+        }
+      }
+    }
+    section{
+      #content{
+        min-height: 420px;
+        font-size: 16px;
+        .note{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  main{
+    section{
+      #content{
+        font-size: 15px;
+        .note{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 825px) {
+  main{
+    section{
+      height: 60%;
+    }
+  }
+}
+
+@media screen and (max-width: 705px) {
+  main{
+    width: 100%;
+    section{
+      height: 55%;
+      #content{
+        font-size: 18px;
+        top: 59%;
+        .note{
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 485px) {
+  main{
+    section{
+      #content{
+        top: 55%;
+      }
+    }
+  }
+}
 
 

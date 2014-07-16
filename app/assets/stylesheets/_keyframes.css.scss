@@ -1,0 +1,18 @@
+@-webkit-keyframes zoomInOut{
+  0%{
+    transform: translateY(-26px);
+    opacity: 0;
+  }
+  30%, 80%{
+    letter-spacing: 40px;
+    padding-left: 40px;
+    transform: translateY( 0px );
+    opacity: 1;
+  }
+  92%, 100%{
+    letter-spacing: 35px;
+    padding-left: 35px;
+    transform: translateY( -4px );
+    opacity: 0;
+  }
+}
