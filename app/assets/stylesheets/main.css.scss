@@ -11,9 +11,9 @@ body{
   background: url(bg.jpg);
   background-attachment: fixed;
   background-color: transparent;
-  background-size: cover;
   background-position-y: 70%;
   background-repeat: no-repeat;
+  @include background-size(cover);
   overflow: auto;
 }
 
