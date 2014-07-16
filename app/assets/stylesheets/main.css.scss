@@ -98,8 +98,64 @@ main{
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 906px) {
   // NO BG COVER
+  main{
+    header{
+      height: 26%;
+      div{
+        top: 45%;
+        figure{
+          img{
+            height: 150px;
+          }
+        }
+      }
+    }
+    section{
+      #content{
+        min-height: 420px;
+        font-size: 15px;
+        .note{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 785px) {
+  main{
+    section{
+      height: 60%;
+    }
+  }
+}
+
+@media screen and (max-width: 701px) {
+  main{
+    width: 100%;
+    section{
+      height: 55%;
+      #content{
+        font-size: 18px;
+        top: 59%;
+        .note{
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 485px) {
+  main{
+    section{
+      #content{
+        top: 55%;
+      }
+    }
+  }
 }
 
 
