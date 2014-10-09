@@ -3,6 +3,10 @@
 @include font-face("HelveticaNM", font-files("HelveticaNeue-Medium.otf"));
 @include font-face("ionicons", font-files("ioicons/ionicons.ttf", "ioicons/ionicons.eot", "ioicons/ionicons.woff", "ioicons/ionicons.svg"), '400', 'normal');
 
+html{
+  height: 100%;
+}
+
 body{
   font-family: 'HelveticaNM';
   text-align: center;
