@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 gem 'sqlite3'
-gem 'capistrano', '~> 3.2.0'
 gem 'jquery-rails'
 gem 'compass-rails'
 gem 'nokogiri'
@@ -16,4 +15,9 @@ end
 
 group :development do
   gem 'better_errors'
+end
+
+group :deployment do
+  gem 'capistano-rails'
+  gem 'capistrano', '~> 3.2.0'
 end
