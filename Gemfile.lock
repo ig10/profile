@@ -32,8 +32,6 @@ GEM
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
     builder (3.0.4)
     capistrano (3.2.1)
       i18n
@@ -49,7 +47,6 @@ GEM
       compass (>= 0.12.2)
       sprockets (<= 2.11.0)
     daemon_controller (1.1.7)
-    debug_inspector (0.0.2)
     domain_name (0.5.23)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -159,7 +156,6 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
-  binding_of_caller
   capistrano (~> 3.2.0)
   compass-rails
   jquery-rails
