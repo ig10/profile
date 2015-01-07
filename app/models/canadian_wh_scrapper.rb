@@ -1,15 +1,16 @@
 class CanadianWhScrapper < ActiveRecord::Base
-  attr_accessible :category, :country, :page_content, :quota, :remaining, :status, :modified_page_date, :xml_content
+  attr_accessible :category, :country, :page_content, :quota, :remaining, :status, :modified_page_date, :xml_content, :ip
 
   PAGE_URL = "http://www.cic.gc.ca/english/work/iec/index.asp"
   PAGE_XML = "http://www.cic.gc.ca/english/work/iec/data.xml"
 
-  def self.execute
+  def self.execute(ip = 'DIRECT CONSOLE REQUEST')
     require 'open-uri'
     xml_doc = Nokogiri::XML(open PAGE_XML)
     page_doc = Nokogiri::HTML(open PAGE_URL)
     chilean_wh = xml_doc.xpath("//country[@location='Chile'][@category='wh']")
     values = {
+      ip: ip,
       country: 'Chile',
       category: 'Work And Holiday',
       quota: chilean_wh.xpath('quota').children.to_s.to_i,
