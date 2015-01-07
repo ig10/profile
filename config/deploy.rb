@@ -8,27 +8,6 @@ set :keep_releases, 5
 
 namespace :deploy do
 
-  desc 'Bundle Install'
-  task :bundle do
-    on roles(:app) do
-      execute "cd #{release_path} && bundle install"
-    end
-  end
-
-  desc 'DB Migrate'
-  task :bundle do
-    on roles(:app) do
-      execute "cd #{release_path} && bundle exec rake db:migrate"
-    end
-  end
-
-  desc 'Assets Precompile'
-  task :precompile do
-    on roles(:app) do
-      execute "cd #{release_path} && rake assets:precompile"
-    end
-  end
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -36,8 +15,6 @@ namespace :deploy do
     end
   end
 
-  before :publishing, :bundle
-  before :publishing, :precompile
   after :publishing, :restart
 
   after :restart, :clear_cache do
