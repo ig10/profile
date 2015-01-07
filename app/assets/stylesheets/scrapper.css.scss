@@ -17,6 +17,17 @@ html#iec {
       margin: 0 auto;
       font-family: HelveticaNM;
       .scrapper-container {
+        &::before {
+         content: '';
+         background-image: url(cl_flag.png);
+         width: 90px;
+         height: 60px;
+         display: block;
+         position: absolute;
+         left: -11px;
+         top: 20px;
+         background-size: 90px;
+        }
         width: 450px;
         height: auto;
         background-color: rgba(255, 255, 255, 0.65);
