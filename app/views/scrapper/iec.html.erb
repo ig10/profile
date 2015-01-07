@@ -1,0 +1,36 @@
+<div>
+  <main class="scrapper-container">
+    <header id="header" class="">
+      <h1>
+        Canadian
+        <br>
+        Work & Holiday 2015
+        <br>
+        Scanner
+      </h1>
+    </header>
+
+    <section>
+      <p><strong>Country:</strong> <%= @iec_wh.country %></p>
+      <p><strong>Category:</strong> <%= @iec_wh.category %></p>
+      <br>
+      <p><strong>Quota:</strong> <%= @iec_wh.quota %></p>
+      <p><strong>Remaining Slots:</strong> <%= @iec_wh.remaining %></p>
+      <p><strong>Status:</strong> <%= @iec_wh.status %></p>
+      <p><strong>Last Updated date:</strong> <%= @iec_wh.modified_page_date.try(:strftime, '%d/%m/%Y') %></p>
+    </section>
+    <br>
+
+    <footer>
+      <div class="source">
+        Data gathered from <br>
+        <%= link_to 'Citizenship and Immigration Canada (CIC)', @reference, target: '_blank' %>
+      </div>
+      <br>
+      <div class="info">
+        All this content is just to provide information about Work And Holiday 2015 process availability for Chilean people.
+      </div>
+    </footer>
+  </main>
+</div>
+
