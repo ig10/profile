@@ -8,7 +8,7 @@ class ScrapperController < ActionController::Base
 
   def iec_request
     forced = params['force'] == '1'
-    old_date = CanadianWhScrapper.last.created_at || Time.now
+    old_date = CanadianWhScrapper.last.try(:created_at) || 2.hours.ago
     enough_time = ((old_date - Time.now) / 1.hour).round < 0
     CanadianWhScrapper.execute(request.ip) if enough_time || forced
 
