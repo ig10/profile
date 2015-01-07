@@ -18,6 +18,6 @@ group :development do
 end
 
 group :deployment do
-  gem 'capistano-rails'
+  gem 'capistrano-rails'
   gem 'capistrano', '~> 3.2.0'
 end
