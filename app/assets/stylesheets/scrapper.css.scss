@@ -3,7 +3,7 @@
 @include font-face("ionicons", font-files("ioicons/ionicons.ttf", "ioicons/ionicons.eot", "ioicons/ionicons.woff", "ioicons/ionicons.svg"), '400', 'normal');
 @include font-face("Canadian", font-files("canadian/canadian.ttf", "canadian/canadian.eot", "canadian/canadian.woff", "canadian/canadian.svg"), 'normal', 'normal');
 
-html {
+html#iec {
   height: 100%;
   body {
     background: url(http://p1.pichost.me/i/17/1399751.jpg);
@@ -13,49 +13,50 @@ html {
     background-repeat: no-repeat;
     @include background-size(cover);
     overflow: auto;
-  }
-}
-
-div {
-  margin: 0 auto;
-  font-family: HelveticaNM;
-  .scrapper-container {
-    width: 450px;
-    height: auto;
-    background-color: rgba(255, 255, 255, 0.65);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-    header {
-      h1 {
-        font-family: Canadian;
-        line-height: 40px;
-      }
-      h3 {
-        font-style: italic;
-        span {
-          font-variant: small-caps;
-          &.blue{ color: rgb(2, 2, 166) }
-          &.white{ color: rgb(247, 247, 247) }
-          &.red{ color: rgb(215, 0, 0) }
+    div {
+      margin: 0 auto;
+      font-family: HelveticaNM;
+      .scrapper-container {
+        width: 450px;
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.65);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+        header {
+          h1 {
+            font-family: Canadian;
+            line-height: 40px;
+          }
+          h3 {
+            font-style: italic;
+            span {
+              font-variant: small-caps;
+              &.blue{ color: rgb(2, 2, 166) }
+              &.white{ color: rgb(247, 247, 247) }
+              &.red{ color: rgb(215, 0, 0) }
+            }
+          }
+        }
+        section {
+          height: 300px;
+          margin: 30px 0;
+          .request-button{
+            margin: 40px 0;
+          }
+        }
+        footer {
+          .source { font-style: italic; }
+          .info { font-size: 14px; }
         }
       }
     }
-    section {
-      height: 300px;
-      margin: 30px 0;
-      .request-button{
-        margin: 40px 0;
-      }
-    }
-    footer {
-      .source { font-style: italic; }
-      .info { font-size: 14px; }
-    }
   }
 }
+
+
 
