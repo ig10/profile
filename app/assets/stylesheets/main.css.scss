@@ -3,130 +3,129 @@
 @include font-face("HelveticaNM", font-files("HelveticaNeue-Medium.otf"));
 @include font-face("ionicons", font-files("ioicons/ionicons.ttf", "ioicons/ionicons.eot", "ioicons/ionicons.woff", "ioicons/ionicons.svg"), '400', 'normal');
 
-html{
+html#home{
   height: 100%;
-}
-
-body{
-  font-family: 'HelveticaNM';
-  text-align: center;
-  margin: 0;
-  height: 100%;
-  background: url(backgrounds/cloudy-resized2.jpg);
-  background-attachment: fixed;
-  background-color: transparent;
-  background-position-y: 70%;
-  background-repeat: no-repeat;
-  @include background-size(cover);
-  overflow: auto;
-}
-
-main{
-  font-size: 0;
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 30%;
-  height: 75%;
-  @include border-radius(30px 0 30px 0);
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.45);
-  overflow: hidden;
-  header{
-    height: 35%;
-    min-height: 180px;
-    max-height: 215px;
-    color: rgb(255, 255, 255);
-    font-size: 35px;
-    font-variant: small-caps;
-    text-rendering: optimizeLegibility;
-    text-shadow: rgb(0, 0, 0) 3px 2px;
-    overflow: hidden;
-    display: inline-block;
-    div{
-      display: inline-block;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      p{
-        margin: 20px 0 15px 0;
-      }
-    }
-  }
-  figure{
+  body{
+    font-family: 'HelveticaNM';
+    text-align: center;
     margin: 0;
-    img{
-      height: 130px;
-      @include border-radius(100px);
-    }
+    height: 100%;
+    background: url(backgrounds/cloudy-resized2.jpg);
+    background-attachment: fixed;
+    background-color: transparent;
+    background-position-y: 70%;
+    background-repeat: no-repeat;
+    @include background-size(cover);
+    overflow: auto;
   }
-  section{
-    height: 45%;
-    border-top: 1px #CCC dashed;
-    border-bottom: 1px #CCC dashed;
+
+  main{
+    font-size: 0;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 30%;
+    height: 75%;
+    @include border-radius(30px 0 30px 0);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.45);
     overflow: hidden;
-    #content{
-      padding: 10px 65px 10px 65px;
-      line-height: 30px;
-      text-align: center;
-      font-size: 17px;
-      color: #CCC;
-      text-shadow: black 2px 2px;
-      margin: 10px 0 10px 0;
-      white-space: normal;
-      vertical-align: middle;
-      min-height: 300px;
+    header{
+      height: 35%;
+      min-height: 180px;
+      max-height: 215px;
+      color: rgb(255, 255, 255);
+      font-size: 35px;
+      font-variant: small-caps;
+      text-rendering: optimizeLegibility;
+      text-shadow: rgb(0, 0, 0) 3px 2px;
       overflow: hidden;
-      a{
-        color: rgb(132, 190, 214);
-        text-decoration: none;
-      }
-      .note{
-        font-size: 15px;
-        font-style: italic;
-        color: #EBEDEB;
+      display: inline-block;
+      div{
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        p{
+          margin: 20px 0 15px 0;
+        }
       }
     }
-
-  }
-  footer{
-    height: 15%;
-    min-height: 95px;
-    font-family: ionicons;
-    #social{
-      @include vertical-align;
-      a{
-        width: 80px;
+    figure{
+      margin: 0;
+      img{
+        height: 130px;
+        @include border-radius(100px);
+      }
+    }
+    section{
+      height: 45%;
+      border-top: 1px #CCC dashed;
+      border-bottom: 1px #CCC dashed;
+      overflow: hidden;
+      #content{
+        padding: 10px 65px 10px 65px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 17px;
         color: #CCC;
-        font-size: 40px;
-        font-weight: 400;
-        display: inline-block;
-        text-decoration: none;
-        @include network('facebook', "\f230", #4c66a4);
-        @include network('twitter', "\f242", #55acee);
-        @include network('linkedin', "\f238", #069);
-        @include network('github', "\f233", #4183c4);
-        @include network('mail', "\f186", #6D803C);
-        @include transition-property(color);
-        @include transition-duration(1.2s);
+        text-shadow: black 2px 2px;
+        margin: 10px 0 10px 0;
+        white-space: normal;
+        vertical-align: middle;
+        min-height: 300px;
+        overflow: hidden;
+        a{
+          color: rgb(132, 190, 214);
+          text-decoration: none;
+        }
+        .note{
+          font-size: 15px;
+          font-style: italic;
+          color: #EBEDEB;
+        }
       }
 
+    }
+    footer{
+      height: 15%;
+      min-height: 95px;
+      font-family: ionicons;
+      #social{
+        @include vertical-align;
+        a{
+          width: 80px;
+          color: #CCC;
+          font-size: 40px;
+          font-weight: 400;
+          display: inline-block;
+          text-decoration: none;
+          @include network('facebook', "\f230", #4c66a4);
+          @include network('twitter', "\f242", #55acee);
+          @include network('linkedin', "\f238", #069);
+          @include network('github', "\f233", #4183c4);
+          @include network('mail', "\f186", #6D803C);
+          @include transition-property(color);
+          @include transition-duration(1.2s);
+        }
+
+      }
     }
   }
 }
-
-
 
 // RESPONSIVE
 
 // Controlling Heights
 
 @media screen and (max-height: 790px){
-  main{
-    header{
-      div{
-        p{
-          margin-bottom: -30px;
+  #home{
+    main{
+      header{
+        div{
+          p{
+            margin-bottom: -30px;
+          }
         }
       }
     }
@@ -134,11 +133,13 @@ main{
 }
 
 @media screen and (max-height: 690px){
-  main{
-    header{
-      figure{
-        img{
-          height: 120px;
+  #home{
+    main{
+      header{
+        figure{
+          img{
+            height: 120px;
+          }
         }
       }
     }
@@ -146,16 +147,18 @@ main{
 }
 
 @media screen and (max-height: 580px){
-  main{
-    header{
-      div{
-        padding: 0 10px;
-        height: 100%;
-        p{
-          float: right;
-        }
-        figure{
-          float: left;
+  #home{
+    main{
+      header{
+        div{
+          padding: 0 10px;
+          height: 100%;
+          p{
+            float: right;
+          }
+          figure{
+            float: left;
+          }
         }
       }
     }
@@ -163,40 +166,43 @@ main{
 }
 
 @media screen and (max-width: 1590px), screen and (max-height: 866px) {
-  main{
-    top: 0;
-    left: 0;
-    width: 40%;
-    height: 100%;
-    @include border-radius(0);
-    header{
-      height: 30%;
-      div{
-        p{
-          float: right;
-          width: 35%;
-          margin: 67px 0;
-          display: inline-block;
-          padding-right: 50px;
-        }
-        figure{
-          float: left;
-          width: 50%;
-          margin: 34px 0px;
-          img{
-            padding-top: 10px;
+  #home{
+    main{
+      top: 0;
+      left: 0;
+      width: 40%;
+      height: 100%;
+      @include border-radius(0);
+      header{
+        height: 30%;
+        div{
+          p{
+            float: right;
+            width: 35%;
+            margin: 67px 0;
+            display: inline-block;
+            padding-right: 50px;
+          }
+          figure{
+            float: left;
+            width: 50%;
+            margin: 34px 0px;
+            img{
+              padding-top: 10px;
+            }
           }
         }
       }
-    }
-    section{
-      height: 55%;
+      section{
+        height: 55%;
+      }
     }
   }
 }
 
 @media screen and (max-width: 551px) {
-  main{
+  #home{
+    main{
     header{
       height: 30%;
       div{
@@ -210,12 +216,13 @@ main{
         }
       }
     }
+    }
   }
 }
 
-
 @media screen and (max-width: 1005px) {
-  main{
+  #home{
+    main{
     overflow: auto;
     width: 100%;
     section{
@@ -228,6 +235,7 @@ main{
           font-size: 15px;
         }
       }
+    }
     }
   }
 }
