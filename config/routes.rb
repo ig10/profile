@@ -2,6 +2,10 @@ Profile::Application.routes.draw do
   root to: 'home#index'
 
   scope controller: 'scrapper' do
-    match 'iec', action: 'iec'
+    scope 'iec' do
+      match '/', action: 'iec'
+      match '/request', action: 'iec_request', as: :request_wh
+    end
   end
+
 end
