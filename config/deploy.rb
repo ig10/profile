@@ -15,6 +15,13 @@ namespace :deploy do
     end
   end
 
+  desc 'DB Migrate'
+  task :bundle do
+    on roles(:app) do
+      execute "cd #{release_path} && bundle exec rake db:migrate"
+    end
+  end
+
   desc 'Assets Precompile'
   task :precompile do
     on roles(:app) do
