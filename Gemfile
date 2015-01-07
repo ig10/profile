@@ -17,7 +17,3 @@ end
 group :development do
   gem 'better_errors'
 end
-
-group :production do
-  gem 'passenger', '~>4.0.10'
-end
