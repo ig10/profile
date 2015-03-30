@@ -13,4 +13,8 @@ class HomeController < ActionController::Base
      @mail = 'ig.diez10@gmail.com'
   end
 
+  def redesign
+    render :redesign, layout: 'design_v2'
+  end
+
 end
