@@ -18,9 +18,11 @@
         <p><strong>Remaining Slots:</strong> <%= @iec_wh.remaining %></p>
         <p><strong>Status:</strong> <%= @iec_wh.status %></p>
         <p><strong>Last Updated Page date:</strong> <%= @iec_wh.modified_page_date.try(:strftime, '%d/%m/%Y') %></p>
+        <p><strong>Kompass Login:</strong> <%= @iec_wh.kompass_year %> </p>
         <p>
           <strong>Requested on:</strong> <%= (@iec_wh.created_at - 3.hours).try(:strftime, '%d/%m/%Y - %H:%M:%S') %>
         </p>
+
       <% else %>
         <p>
           Not requested YET, <br> be the first and clicking the button Below.
@@ -37,7 +39,9 @@
     <footer>
       <div class="source">
         Data gathered from <br>
-        <%= link_to 'Citizenship and Immigration Canada (CIC)', @reference, target: '_blank' %>
+        <%= link_to 'Citizenship and Immigration Canada (CIC)', @reference, target: '_blank' %> <br>
+        and <br>
+        <%= link_to 'International Experience Canada', @kompass_reference, target: '_blank' %>
       </div>
       <br><br>
       <div class="info">
