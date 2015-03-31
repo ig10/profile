@@ -4,6 +4,7 @@ class ScrapperController < ActionController::Base
   def iec
     @iec_wh = CanadianWhScrapper.last
     @reference = CanadianWhScrapper::PAGE_URL
+    @kompass_reference = CanadianWhScrapper::KOMPASS_URL
   end
 
   def iec_request
