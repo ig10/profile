@@ -2,11 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-gem 'sqlite3'
+gem 'pg'
 gem 'jquery-rails'
 gem 'compass-rails'
 gem 'nokogiri'
 gem 'mechanize'
+gem 'awesome_print'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

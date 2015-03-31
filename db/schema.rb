@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150107051552) do
+ActiveRecord::Schema.define(:version => 20150118224610) do
 
   create_table "canadian_wh_scrappers", :force => true do |t|
     t.string   "category"
@@ -21,10 +21,20 @@ ActiveRecord::Schema.define(:version => 20150107051552) do
     t.integer  "remaining"
     t.string   "status"
     t.date     "modified_page_date"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.text     "xml_content"
     t.string   "ip"
+    t.string   "kompass_year"
+    t.date     "kompass_modified_page_date"
+  end
+
+  create_table "notifications", :force => true do |t|
+    t.string   "source"
+    t.string   "message"
+    t.string   "ip"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
