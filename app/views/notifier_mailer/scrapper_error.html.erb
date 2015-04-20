@@ -1,0 +1,20 @@
+<% content_for(:title, 'IEC Scrapper Error Notification') %>
+<div>
+  <p><strong>Notification Details:</strong></p>
+  <p>
+    <strong>Source: </strong> <%= @notification.source %>
+  </p>
+  <p>
+    <strong>Message: </strong>
+    <div style="font-style: italic">
+      <%= @notification.message %>
+    </div>
+  </p>
+  <p>
+    <strong>Created at: </strong> <%= @notification.created_at %>
+  </p>
+  <br><br>
+  <p style="font-size: 10px">
+    This notifications are purely Informative, if you are not suposed to receive this email, please contact me at <%= @origin_address[:mail] %>.
+  </p>
+</div>

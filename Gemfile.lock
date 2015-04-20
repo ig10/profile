@@ -63,6 +63,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1)
+    colored (1.2)
     compass (1.0.3)
       chunky_png (~> 1.2)
       compass-core (~> 1.0.2)
@@ -189,6 +190,7 @@ DEPENDENCIES
   better_errors
   capistrano (~> 3.2.0)
   capistrano-rails
+  colored (~> 1.2)
   compass-rails
   foundation-rails!
   jquery-rails

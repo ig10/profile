@@ -9,6 +9,7 @@ gem 'nokogiri'
 gem 'mechanize'
 gem 'turbolinks'
 gem 'awesome_print'
+gem 'colored', '~> 1.2'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

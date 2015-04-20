@@ -3,7 +3,6 @@ class Notification < ActiveRecord::Base
   after_create :notify
 
   def notify
-    Notifier.deliver_scrapping_error(self)
+    Notifier.new(self)
   end
-
 end
