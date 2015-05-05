@@ -82,7 +82,4 @@ class CanadianWhScrapper < ActiveRecord::Base
       end
 
   end
-
-
-
 end

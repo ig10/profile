@@ -46,8 +46,7 @@ Profile::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
-
+  config.assets.precompile += %w( vendor/modernizr.js )
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
@@ -64,4 +63,18 @@ Profile::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  config.action_mailer.delivery_method = :smtp
+
+  credentials = YAML.load(File.read(Rails.root.join('config/mailer.yml')))
+
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'example.com',
+    user_name:            credentials[:username],
+    password:             credentials[:password],
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
 end

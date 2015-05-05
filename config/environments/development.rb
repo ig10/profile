@@ -34,4 +34,18 @@ Profile::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.action_mailer.delivery_method = :smtp
+
+  credentials = YAML.load(File.read(Rails.root.join('config/mailer.yml')))
+
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'example.com',
+    user_name:            credentials[:username],
+    password:             credentials[:password],
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
 end

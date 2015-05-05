@@ -1,0 +1,139 @@
+@import 'mixins';
+@import 'keyframes';
+@include font-face("HelveticaNM", font-files("HelveticaNeue-Medium.otf"));
+@include font-face("ionicons", font-files("ioicons/ionicons.ttf", "ioicons/ionicons.eot", "ioicons/ionicons.woff", "ioicons/ionicons.svg"), '400', 'normal');
+
+html#home_v2 {
+  height: 100%;
+  header {
+    nav {
+      background: rgba(47,47,47,0.71);
+      color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      right: 0;
+      z-index: 1000;
+      cursor: pointer;
+      overflow: hidden;
+      height: 70px;
+      @include transform(translate(0,0));
+      @include transition(all, 1s, cubic-bezier(1, .12, .37, .82));
+      @include transition(transform, .4s, height .3s, background .4s);
+      @include animation(firstFadeInAndDrop, .5s);
+      ul {
+        float: none;
+        clear: none;
+        margin: 0 auto;
+        padding: 1em 0;
+        text-align: right;
+        width: 80%;
+        line-height: 2.5;
+        li {
+          display: inline-block;
+          width: auto;
+          clear: none;
+          margin: 0 1.6em 0 0;
+          a {
+            font-size: 0.85em;
+            font-weight: 300;
+            color: #DBDBDB;
+            text-decoration: none;
+            @include transition-property(color);
+            @include transition-duration(1.2s);
+            &:hover {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    clear: both;
+    float: left;
+    width: 100%;
+    position: relative;
+  }
+
+  .animated {
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    &.fadeInDown {
+      -webkit-animation-name: fadeInDown;
+      -moz-animation-name: fadeInDown;
+      -o-animation-name: fadeInDown;
+      animation-name: fadeInDown;
+    }
+  }
+
+  .main {
+    text-align: center;
+    margin: 0% 0 0 0;
+    height: 100%;
+    min-height: 580px;
+    background: url(backgrounds/cloudy-resized2.jpg);
+    background-attachment: fixed;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .intro {
+      width: 30%;
+      height: 100%;
+      clear: none;
+      float: none;
+      margin: 25% auto 15.5% auto;
+      text-align: center;
+      h2 {
+        color: #1D1A1A;
+        font-weight: 300;
+        font-size: 3.2rem;
+        line-height: 0.89;
+        border-bottom: 1px solid #f00;
+        text-shadow: 0 1px 0px rgba(213, 204, 204, 0.5);
+        -webkit-animation: firstFadeInAndDrop .5s;
+      }
+    }
+  }
+
+  .info {
+    border-bottom: 1px solid rgba(65, 67, 70, 0.3);
+    background: linear-gradient(#FCFCFC,#E9E9E9) no-repeat 100% 0;
+    background-size: 50% 100%;
+    h2 {
+      border-bottom: 1px lightgray solid;
+      font-weight: 300;
+      font-size: 3.5em;
+      line-height: 2;
+      margin: 0 0 .51em 0;
+    }
+  }
+
+  .phrase {
+    clear: none;
+    float: left;
+    height: 10em;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+    background: #F1F1F1;
+    position: relative;
+    @include transition(all, .3s);
+    &:before {
+      background-color: rgba(0, 0, 0, 0.37);
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+}
