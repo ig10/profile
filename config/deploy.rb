@@ -5,6 +5,7 @@ set :application, 'profile'
 set :repo_url, 'git@github.com:ig10/profile.git'
 set :deploy_to, '/mnt/profile'
 set :keep_releases, 5
+set :linked_files, %w{config/database.yml}
 
 namespace :deploy do
   desc 'Restart application'
@@ -14,12 +15,6 @@ namespace :deploy do
     end
   end
 
-  desc "Symlinks the database.yml"
-  task :symlink_db, roles: :app do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  end
-
-  after 'deploy:update_code', 'deploy:symlink_db'
   after :publishing, :restart
 
   after :restart, :clear_cache do
