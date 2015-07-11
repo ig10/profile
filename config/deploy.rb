@@ -7,7 +7,6 @@ set :deploy_to, '/mnt/profile'
 set :keep_releases, 5
 
 namespace :deploy do
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -15,6 +14,12 @@ namespace :deploy do
     end
   end
 
+  desc "Symlinks the database.yml"
+  task :symlink_db, roles: :app do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end
+
+  after 'deploy:update_code', 'deploy:symlink_db'
   after :publishing, :restart
 
   after :restart, :clear_cache do
