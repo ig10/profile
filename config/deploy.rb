@@ -1,5 +1,4 @@
 # config valid only for Capistrano 3.1
-require "bundler/capistrano"
 lock '3.2.1'
 
 set :application, 'profile'
