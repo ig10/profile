@@ -1,3 +1,4 @@
+
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary server in each group
@@ -37,9 +38,7 @@ server 'ig10.org',
   user: 'ig10',
   roles: %w{web app},
   ssh_options: {
-    user: 'ig10', # overrides user setting above
-    #keys: %w(/home/user_name/.ssh/id_rsa),
+    keys: %w(~/.ssh/id_rsa.pub),
     forward_agent: false,
-    auth_methods: %w(publickey password),
-    password: ''
+    auth_methods: %w(publickey)
   }
