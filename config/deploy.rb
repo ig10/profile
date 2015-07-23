@@ -11,7 +11,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "cd #{release_path} && mkdir ./tmp && touch ./tmp/restart.txt"
+      execute "cd #{release_path} && touch ./tmp/restart.txt"
     end
   end
 
