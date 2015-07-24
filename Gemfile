@@ -10,9 +10,9 @@ gem 'mechanize'
 gem 'turbolinks'
 gem 'awesome_print'
 gem 'colored', '~> 1.2'
+gem 'sass-rails',   '~> 5.0.1'
 
 group :assets do
-  gem 'sass-rails',   '~> 5.0.1'
   gem 'uglifier',     '>= 1.0.3'
   gem 'foundation-rails', '~> 5.5.0'
 end
