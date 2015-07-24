@@ -1,5 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require modernizr
+//= require vendor/modernizr
 //= require_self
 //= require_tree .
