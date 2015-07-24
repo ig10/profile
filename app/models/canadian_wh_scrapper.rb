@@ -1,7 +1,7 @@
 require 'open-uri'
 class CanadianWhScrapper < ActiveRecord::Base
-  attr_accessible :category, :country, :page_content, :quota, :remaining, :status,
-    :modified_page_date, :xml_content, :ip, :kompass_year, :kompass_modified_page_date
+  # attr_accessible :category, :country, :page_content, :quota, :remaining, :status,
+  #   :modified_page_date, :xml_content, :ip, :kompass_year, :kompass_modified_page_date
 
   PAGE_URL = "http://www.cic.gc.ca/english/work/iec/index.asp?country=cl&cat=wh"
   PAGE_XML = "http://www.cic.gc.ca/english/work/iec/data.xml"

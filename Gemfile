@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.2.0'
 
 gem 'pg'
 gem 'jquery-rails'
-gem 'compass-rails'
+gem 'compass-rails', '2.0.4'
 gem 'nokogiri'
 gem 'mechanize'
 gem 'turbolinks'
@@ -12,9 +12,9 @@ gem 'awesome_print'
 gem 'colored', '~> 1.2'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails',   '~> 5.0.1'
   gem 'uglifier',     '>= 1.0.3'
-  gem 'foundation-rails', git: 'https://github.com/zurb/foundation-rails.git', branch: 'master'
+  gem 'foundation-rails', '~> 5.5.0'
 end
 
 group :development do
