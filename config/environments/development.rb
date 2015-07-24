@@ -28,6 +28,8 @@ Profile::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.eager_load = false
+
   config.action_mailer.delivery_method = :smtp
 
   credentials = YAML.load(File.read(Rails.root.join('config/mailer.yml')))
